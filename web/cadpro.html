@@ -8,12 +8,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <title>Cadastro de produtos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="cadastro.css">
     </head>
     <body>
-        <form method="post" action="salvar_produtos.jsp">
-            <p>
-                <input type="submit" value="Salvar">
-            </p>
-        </form>
+      
+        <main>
+            <h1>Cadastro de produtos</h1>
+            <form method="post" action="salvar_produtos.jsp">
+                <p>
+                    <label for="codigo">Código do produto: </label>
+                    <input class="input-form" type="text" name="codigo" id="codigo" maxlength="50">
+                </p>
+                <p>
+                    <label for="nome">Nome  </label>
+                    <input class="input-form" type="text" name="nome" id="nome">
+                </p>
+                <p>
+                    <label for="marca">Marca  </label>
+                    <input class="input-form" type="text" name="marca" id="marca" maxlength="50">
+                </p>
+                <p>
+                    <label for="preco">Preço  </label>
+                    <input class="input-form" type="text" name="preco" id="preco">
+                </p>
+                
+                
+                
+                <p class="botao-flex">
+                    <input class="botao-input" type="submit" value="salvar">
+                </p>
+            </form>
+        </main>
+      
     </body>
 </html>

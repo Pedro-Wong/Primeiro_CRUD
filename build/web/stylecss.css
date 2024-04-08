@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
 }
-
+/* Início header / cabeçalho*/
 header{
     height: 15vh;
     border: 1px solid red;
@@ -37,25 +37,29 @@ li{
 }
 
 li a:visited{
-    color: lightcoral;
+    color: gray;
 }
 
 li a:hover{
-    color: lightgray;
+    color: red;
 }
 
 li a{
    color:black; 
    text-decoration: none;
 }
-/* fim do header */
+/* fim do header / cabeçalho */
 
 main{
     border: 1px solid green;
     background:#D7DEE2;
     height: 78vh;
 }
-
+main iframe{
+    height: 70vh;
+    width: 100%;
+    border:0;
+}
 
 footer{
     border: 1px solid orange; 
