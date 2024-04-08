@@ -53,8 +53,9 @@ li a{
 
 main{
    
-    background:#D7DEE2;
+   
     height: 35vh;
+   
 }
 
 
@@ -86,7 +87,7 @@ form p{
 }
 .botao-input{
     width: 30vw;
-    height: 4vh;
+    height: 6vh;
     box-shadow: 1px 1px black ;
 }
 .botao-flex{
