@@ -25,7 +25,7 @@
         %>  
                 <table>
                         <tr>
-                            <th>Código</th><th>Nome</th><th>Marca</th><th>Preço</th>     
+                            <th>Código</th><th>Nome</th><th>Marca</th><th>Preço</th><th>Exclusão</th>    
                         </tr>
         <%       
                 while(rs.next()){  
@@ -36,6 +36,7 @@
                             <td><%= rs.getString("nome")%></td>
                             <td><%= rs.getString("marca")%></td>
                             <td><%= rs.getString("preco")%></td>
+                            <td><a href="excpro.jsp?codigo=<%=rs.getString("codigo")%>">Excluir</a></td>
                         </tr>    
                   
         <%
