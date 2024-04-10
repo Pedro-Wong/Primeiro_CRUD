@@ -34,7 +34,9 @@
                 st.executeUpdate(); // executa o comando insert
                 out.print("Produto cadastrado com sucesso");
             }catch(Exception x){
-                out.print("Erro na conexao com banco de dados");
+                x.getMessage();
+                out.print("Erro na conexão com banco de dados");
+                
             }
         %>
     </body>
