@@ -9,20 +9,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listagem dos produtos</title>
+        <link rel="stylesheet" href="tabela.css"/>
     </head>
     <body>
         <%
             try{
-                // fazer conexão com o banco de dados (import do Connection e PreparedStetament)
+                 // fazer conexão com o banco de dados (import do Connection, PreparedStetament e DriverManager)
                 Connection conecta;
                 PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "trojan123");
                 //listar os dados na tabela produto do banco de dados aberto
-                st = conecta.prepareStatement("SELECT * FROM produto"); // comando para consultar todos os dados da tabela produto
+                st = conecta.prepareStatement("SELECT * FROM produto ORDER By preco"); // comando para consultar todos os dados da tabela produto
                 ResultSet rs = st.executeQuery(); // ResultSet serve para guardar os dados vindo do banco para aplicação java
         %>  
-                <table border="1">
+                <table>
                         <tr>
                             <th>Código</th><th>Nome</th><th>Marca</th><th>Preço</th>     
                         </tr>

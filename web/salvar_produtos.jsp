@@ -20,7 +20,7 @@
             marca = request.getParameter("marca");
             preco = Double.parseDouble(request.getParameter("preco"));
             try{
-                // fazer conexão com o banco de dados (import do Connection e PreparedStetament)
+                // fazer conexão com o banco de dados (import do Connection, PreparedStetament e DriverManager)
                 Connection conecta;
                 PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -34,8 +34,12 @@
                 st.executeUpdate(); // executa o comando insert
                 out.print("Produto cadastrado com sucesso");
             }catch(Exception x){
-                x.getMessage();
-                out.print("Erro na conexão com banco de dados");
+                String erro = x.getMessage();
+                if(erro.contains("Duplicate entry")){
+                    out.print("<p style='color: blue; font-size: 16px'>Este produto já está cadastrado</p>");
+                }else{
+                    out.print("<p style='color: red; font-size: 16px'> Erro: " + erro + "</p>");
+                }
                 
             }
         %>
