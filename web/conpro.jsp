@@ -13,6 +13,9 @@
     </head>
     <body>
         <%
+            //Pegando os dados do formulário conpro.html
+            String nome;
+            nome = request.getParameter("nome");
             try{
                  // fazer conexão com o banco de dados (import do Connection, PreparedStetament e DriverManager)
                 Connection conecta;
@@ -20,7 +23,8 @@
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "trojan123");
                 //listar os dados na tabela produto do banco de dados aberto
-                st = conecta.prepareStatement("SELECT * FROM produto ORDER By preco"); // comando para consultar todos os dados da tabela produto
+                st = conecta.prepareStatement("SELECT * FROM produto WHERE nome LIKE ?"); // comando para consultar todos os dados da tabela produto pela coluna nome e com um tipo específico
+                st.setString(1, "%" + nome +"%");
                 ResultSet rs = st.executeQuery(); // ResultSet serve para guardar os dados vindo do banco para aplicação java
         %>  
                 <table>

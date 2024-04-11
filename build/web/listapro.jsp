@@ -36,7 +36,7 @@
                             <td><%= rs.getString("nome")%></td>
                             <td><%= rs.getString("marca")%></td>
                             <td><%= rs.getString("preco")%></td>
-                            <td><a href="excpro.jsp?codigo=<%=rs.getString("codigo")%>">Excluir</a></td>
+                            <td><a href="excpro.jsp?codigo=<%=rs.getString("codigo")%>">Excluir</a></td> <!-- Excluir diretamente, mais usado no dia a dia  -->
                         </tr>    
                   
         <%
