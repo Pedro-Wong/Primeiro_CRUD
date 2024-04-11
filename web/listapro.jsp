@@ -25,7 +25,7 @@
         %>  
                 <table>
                         <tr>
-                            <th>Código</th><th>Nome</th><th>Marca</th><th>Preço</th><th>Exclusão</th>    
+                            <th>Código</th><th>Nome</th><th>Marca</th><th>Preço</th><th>Exclusão</th><th>Alterar</th>    
                         </tr>
         <%       
                 while(rs.next()){  
@@ -37,6 +37,7 @@
                             <td><%= rs.getString("marca")%></td>
                             <td><%= rs.getString("preco")%></td>
                             <td><a href="excpro.jsp?codigo=<%=rs.getString("codigo")%>">Excluir</a></td> <!-- Excluir diretamente, mais usado no dia a dia  -->
+                            <td><a href="carregaprod.jsp?codigo=<%=rs.getString("codigo")%>">Alterar</a></td>
                         </tr>    
                   
         <%
