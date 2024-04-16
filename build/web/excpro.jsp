@@ -17,10 +17,10 @@
             try{
                 //Conexao com banco de dados
                 Connection conecta;
-                PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "trojan123");
                 // Exclui o produto do código informado
+                PreparedStatement st;
                 st = conecta.prepareStatement("DELETE FROM produto WHERE codigo=?");// coloca interrogação, pois não vai ser passado o valor agora
                 st.setInt(1, cod); // nessa linha é onde coloca a informação que irá entrar na interrogação
                 int resultado = st.executeUpdate(); // Aqui é executado o comando DELETE

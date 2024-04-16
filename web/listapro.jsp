@@ -16,10 +16,10 @@
             try{
                  // fazer conexão com o banco de dados (import do Connection, PreparedStetament e DriverManager)
                 Connection conecta;
-                PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "trojan123");
                 //listar os dados na tabela produto do banco de dados aberto
+                PreparedStatement st;
                 st = conecta.prepareStatement("SELECT * FROM produto ORDER By preco"); // comando para consultar todos os dados da tabela produto
                 ResultSet rs = st.executeQuery(); // ResultSet serve para guardar os dados vindo do banco para aplicação java
         %>  

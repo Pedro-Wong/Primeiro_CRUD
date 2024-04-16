@@ -18,10 +18,10 @@
           c = Integer.parseInt(request.getParameter("codigo"));
           //Conexão com o banco
           Connection conecta;
-          PreparedStatement st;
           Class.forName("com.mysql.cj.jdbc.Driver"); // Mostra onde está o driver para conectar com o banco
           conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "trojan123"); // Faz a conexão com o banco e precisa dos parametros url, usuario e senha do banco
           // Buscar o produto pelo o código recebido
+          PreparedStatement st;
           st = conecta.prepareStatement("SELECT * FROM produto WHERE codigo = ?");// interrogação é para passar o valor a ser pesquisado depois
           st.setInt(1, c);//Valor que irá para a interrogação
           ResultSet resultado = st.executeQuery();// executa o comando SQL, no caso o SELECT do st e guarda os dados do produto selecionado
